@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CanvasViewApp</string>
+    <string name="bold">20</string>
+    <integer name="regular">12</integer>
 </resources>

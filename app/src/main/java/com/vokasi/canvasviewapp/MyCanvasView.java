@@ -1,7 +1,6 @@
 package com.vokasi.canvasviewapp;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -27,10 +26,16 @@ public class MyCanvasView extends View {
         super(context,null);
     }
 
+    public void setPathColor(int color){
+        mPaint.setColor(color);
+    }
+    public void setWidthStroke(float width){
+        mPaint.setStrokeWidth(width);
+    }
     public MyCanvasView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        mBackgroundColor= ResourcesCompat.getColor(getResources(), R.color.teal_200,null);
-        mDrawColor= ResourcesCompat.getColor(getResources(), R.color.teal_700,null);
+        mBackgroundColor= ResourcesCompat.getColor(getResources(), R.color.white,null);
+        mDrawColor= ResourcesCompat.getColor(getResources(), R.color.black,null);
         mPath=new Path();
         mPaint=new Paint();
         mPaint.setColor(mDrawColor);
@@ -40,6 +45,7 @@ public class MyCanvasView extends View {
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeWidth(12);
+
     }
 
     @Override
